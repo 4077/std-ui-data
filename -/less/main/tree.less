@@ -1,0 +1,225 @@
+// head {
+@import "tree/themes/gray.less";
+
+@__nodeId__: ~"std_ui_data__main_tree";
+// }
+
+.@{__nodeId__} {
+
+    table {
+        border-spacing: 0;
+
+        tr {
+
+            > td {
+                padding: 5px;
+                white-space: nowrap;
+
+                &.left {
+                    cursor: pointer;
+
+                    &.index {
+                        font-weight: bold;
+                    }
+                }
+
+                &.right {
+                    cursor: pointer;
+                    padding: 0;
+                    min-width: 20px;
+
+                    &.array {
+                        cursor: pointer;
+
+                        .icon {
+                            float: left;
+                            margin: 2px;
+                            width: 16px;
+                            height: 16px;
+                            background: url('../images/icons_bbbbbb.png') -32px -16px;
+                        }
+
+                        &.expand {
+
+                            .icon {
+                                background-position: -48px -16px;
+                            }
+                        }
+
+                        &.empty {
+
+                            .icon {
+                                background-position: -112px -144px;
+                            }
+                        }
+                    }
+
+                    &.scalar {
+                        padding: 5px;
+
+                        &.bool {
+
+                            &.true {
+                                color: #0046DA;
+                            }
+
+                            &.false {
+                                color: #D52D27;
+                            }
+
+                            &.hover {
+                                text-decoration: underline;
+                            }
+                        }
+
+                        &.string {
+
+                            .value {
+                                color: #404040;
+                            }
+
+                            input {
+                                border: 0;
+                                margin: -5px -5px;
+                                padding: 4px 5px;
+                                background-color: #FAF2DA;
+                            }
+                        }
+
+                        &.number {
+
+                            .value {
+                                color: #20698B;
+                            }
+
+                            input {
+                                border: 0;
+                                margin: -5px -5px;
+                                padding: 4px 5px;
+                                background-color: #FAF2DA;
+                            }
+                        }
+                    }
+
+                    &.null {
+                        padding: 5px;
+
+                        .value {
+                            font-style: italic;
+                            color: #808080;
+                        }
+                    }
+
+                    &.hover {
+
+                        &.array {
+
+                            .icon {
+                                background-image: url('../images/icons_454545.png');
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.level1 {
+
+                & > td {
+
+                    &.left {
+                        background-color: @L1_L_bgcolor;
+                        color: @L1_L_color;
+
+                        &.hover {
+                            background-color: @L1_L_bgcolor + #111111;
+                        }
+                    }
+
+                    &.right {
+                        background-color: @L1_R_bgcolor;
+                        color: @L1_R_color;
+                    }
+                }
+
+                &.even {
+
+                    & > td {
+
+                        &.left {
+                            background-color: @L1_L_bgcolor - @even_color_delta;
+                            color: @L1_L_color;
+
+                            &.hover {
+                                background-color: @L1_L_bgcolor + #111111;
+                            }
+                        }
+
+                        &.right {
+                            background-color: @L1_R_bgcolor - @even_color_delta;
+                            color: @L1_R_color;
+                        }
+                    }
+                }
+            }
+
+            &.level2 {
+
+                & > td {
+
+                    &.left {
+                        background-color: @L2_L_bgcolor;
+                        color: @L2_L_color;
+
+                        &.hover {
+                            background-color: @L2_L_bgcolor + #111111;
+                        }
+                    }
+
+                    &.right {
+                        background-color: @L2_R_bgcolor;
+                        color: @L2_R_color;
+                    }
+                }
+
+                &.even {
+
+                    & > td {
+
+                        &.left {
+                            background-color: @L2_L_bgcolor - @even_color_delta;
+                            color: @L2_L_color;
+
+                            &.hover {
+                                background-color: @L2_L_bgcolor + #111111;
+                            }
+                        }
+
+                        &.right {
+                            background-color: @L2_R_bgcolor - @even_color_delta;
+                            color: @L2_R_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hover {
+
+            td.index {
+                color: #FF0000;
+            }
+        }
+    }
+
+    .add_button {
+        cursor: pointer;
+        padding: 20px;
+        text-align: center;
+        background-color: #F0F0F0;
+
+        &.hover {
+            background-color: #404040;
+            color: #BDFF00;
+        }
+    }
+}

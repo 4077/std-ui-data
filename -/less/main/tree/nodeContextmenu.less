@@ -1,0 +1,402 @@
+// head {
+@__nodeId__: ~"std_ui_data__main_tree_nodeContextmenu";
+// }
+
+.@{__nodeId__} {
+    padding: 5px 0;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 19px rgba(0, 0, 0, 0.54);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+
+    .sep {
+        clear: both;
+        margin: 5px 0;
+        height: 0;
+        border-top: 1px solid #EFEFEF
+    }
+
+    > .inputs {
+        display: flex;
+
+        .index_form {
+            flex-grow: 1;
+            margin: 0 5px;
+
+            .input {
+                float: left;
+
+                input {
+                    padding: 3px 5px;
+                    background-color: #656565;
+                    width: 100%;
+                    color: #FFFFFF;
+                }
+            }
+
+            .save_button {
+                cursor: pointer;
+                display: none;
+                float: left;
+                padding: 5px 20px 4px;
+                background-color: #D8D8D8;
+
+                &.hover {
+                    background-color: #8E8E8E;
+                    color: #FFFFFF;
+                }
+            }
+
+            &.wrong_input_value {
+
+                input {
+                    background-color: #A23B3B;
+                    color: #FF9C9C;
+                }
+
+                .save_button {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .import_form {
+            flex-grow: 0;
+            margin: 0 5px;
+
+            .input {
+                float: left;
+
+                input {
+                    padding: 3px 5px;
+                    background-color: #E8E8E8;
+                    width: 45px;
+                    color: #FFFFFF;
+
+                    &.updated {
+                        background-color: #00B1D6;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+
+    .fn_apply_form {
+        margin: 5px;
+
+        .select {
+            float: left;
+            margin: 0 0 0 5px;
+        }
+
+        .apply_button,
+        .apply_to_level_button {
+            cursor: pointer;
+            float: left;
+            margin: 0 3px;
+            padding: 3px 10px;
+
+            &:hover {
+                background-color: #DA1673;
+                color: #FFEBB0;
+            }
+        }
+    }
+
+    .type_form {
+        margin: 5px;
+
+        .button {
+            cursor: pointer;
+            float: left;
+            margin: 3px 0;
+            padding: 2px 5px;
+            color: #A0A0A0;
+
+            &.current {
+                font-weight: bold;
+            }
+
+            &.hover {
+                text-decoration: underline;
+            }
+
+            &.selected {
+
+                &.string {
+                    background-color: #499C1D;
+                    color: #D2F3D0;
+                }
+
+                &.array {
+                    background-color: #E85EA3;
+                    color: #FFFFFF;
+                }
+
+                &.false {
+                    background-color: #FF8C8C;
+                    color: #FFFFFF;
+                }
+
+                &.true {
+                    background-color: #66A7E6;
+                    color: #FFFFFF;
+                }
+
+                &.null {
+                    background-color: #808080;
+                    color: #FFFFFF;
+                }
+            }
+
+            &.current {
+
+                &.string {
+                    color: #008800;
+                }
+
+                &.array {
+                    color: #E85EA3;
+                }
+
+                &.false {
+                    color: #FF3C3C;
+                }
+
+                &.true {
+                    color: #2394E6;
+                }
+
+                &.null {
+                    color: #000000;
+                }
+            }
+        }
+
+        .save_button {
+            cursor: pointer;
+            display: none;
+            float: left;
+            margin-left: 10px;
+            padding: 5px 20px 4px;
+            background-color: #D8D8D8;
+
+            &.hover {
+                background-color: #000000;
+                color: #FF0700;
+            }
+        }
+    }
+
+    .ignore_keys_toggle_button {
+        cursor: pointer;
+        float: right;
+        margin: 10px 3px;
+        padding: 3px 10px;
+        color: #909090;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.enabled {
+            background-color: #DA3333;
+            color: #FFEBB0;
+        }
+    }
+
+    .buttonsRow() {
+        cursor: default;
+
+        .label {
+            float: left;
+            width: 100px;
+            text-align: right;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+
+        .button {
+            cursor: pointer;
+            float: left;
+            padding: 5px 10px;
+            width: 50px;
+            color: #B2B2B2;
+        }
+    }
+
+    .add {
+        .buttonsRow;
+
+        &.hover {
+
+            .label {
+                background-color: #595959;
+                color: #FFFFFF;
+            }
+
+            .button {
+                background-color: #F3F3F3;
+                color: #88858A;
+
+                &.hover {
+                    background-color: #595959;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .export {
+        .buttonsRow;
+
+        .inputs {
+            width: 1px;
+            height: 0;
+
+            input {
+                width: 1px;
+                height: 0;
+                opacity: 0;
+            }
+        }
+
+        &.hover {
+
+            .label {
+                background-color: #00B1D6;
+                color: #FFFFFF;
+            }
+
+            .button {
+                background-color: #D0E9F1;
+                color: #3D85B1;
+
+                &.hover {
+                    background-color: #00B1D6;
+                    color: #FFFFFF;
+                }
+            }
+        }
+
+        .button {
+
+            &.exported {
+                background-color: #00B1D6;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .copy {
+        .buttonsRow;
+
+        &.hover {
+
+            .label {
+                background-color: #60B300;
+                color: #FFFFFF;
+            }
+
+            .button {
+                background-color: #DCECC9;
+                color: #3A8A00;
+
+                &.hover {
+                    background-color: #60B300;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .paste {
+        .buttonsRow;
+
+        &.add {
+
+            &.hover {
+
+                .label {
+                    background-color: #007EB3;
+                    color: #FFFFFF;
+                }
+
+                .button {
+                    background-color: #AED4EC;
+                    color: #00518A;
+
+                    &.hover {
+                        background-color: #007EB3;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+
+        &.rewrite {
+
+            &.hover {
+
+                .label {
+                    background-color: #9E00B3;
+                    color: #FFFFFF;
+                }
+
+                .button {
+                    background-color: #D4BEEC;
+                    color: #6F008A;
+
+                    &.hover {
+                        background-color: #9E00B3;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+
+    .replace {
+        .buttonsRow;
+
+        &.hover {
+
+            .label {
+                background-color: #B30028;
+                color: #FFFFFF;
+            }
+
+            .button {
+                background-color: #ECA8A6;
+                color: #8A0021;
+
+                &.hover {
+                    background-color: #B30028;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .unset {
+        .buttonsRow;
+
+        &.hover {
+
+            .label {
+                background-color: #FFE800;
+                color: #FF0000;
+            }
+
+            .button {
+                background-color: #464646;
+                color: #FF9B00;
+
+                &.hover {
+                    background-color: #000000;
+                    color: #FF3426;
+                }
+            }
+        }
+    }
+}
