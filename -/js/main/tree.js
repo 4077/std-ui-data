@@ -74,7 +74,7 @@ var __nodeNs__ = "std_ui_data";
                         });
                     })
                     .bind("keyup", function (e) {
-                        if (e.keyCode == 13) {
+                        if (e.keyCode === 13) {
                             request(widget.options.paths.updateStringValue, {
                                 instance: widget.options.instance,
                                 path:     nodePath,
@@ -85,10 +85,12 @@ var __nodeNs__ = "std_ui_data";
                             });
                         }
 
-                        if (e.keyCode == 27) {
+                        if (e.keyCode === 27) {
                             stringControl.html(valueContainer).find(".value").html(value);
                             widget._stringValueBind(stringControl);
                         }
+
+                        e.stopPropagation();
                     });
 
                 $(this).html(input).unbind("click");

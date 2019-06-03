@@ -66,8 +66,6 @@ var __nodeNs__ = "std_ui_data";
         importStatus: function (data) {
             var widget = this;
 
-            p(data);
-
             var $importInput = $(".import_form input", widget.element);
 
             if (data.updated) {
@@ -98,20 +96,20 @@ var __nodeNs__ = "std_ui_data";
             var wrongValue = false;
 
             input.focus().bind("keyup", function (e) {
-                if (e.keyCode == 13) {
+                if (e.keyCode === 13) {
                     if (!wrongValue) {
                         widget._submitIndexForm();
                     }
                 } else {
                     var value = input.val();
 
-                    if (value == widget.options.index) {
+                    if (value === widget.options.index) {
                         saveButton.hide();
                     } else {
                         saveButton.show();
                     }
 
-                    if (value.length == 0 || in_array(value, widget.options.usedIndexes)) {
+                    if (value.length === 0 || in_array(value, widget.options.usedIndexes)) {
                         wrongValue = true;
                         form.addClass("wrong_input_value");
                     } else {
@@ -119,6 +117,8 @@ var __nodeNs__ = "std_ui_data";
                         form.removeClass("wrong_input_value");
                     }
                 }
+
+                e.stopPropagation();
             });
 
             saveButton.bind("click", function () {
